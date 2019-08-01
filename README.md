@@ -1,7 +1,7 @@
 
 ## 脚本索引
 
-## =
+## ssr2.sh
 
 - 脚本说明: Shadowsocks 一键安装管理脚本
 - 系统支持: CentOS6+  / CentOS7+ / Debian6+ / Ubuntu14+
@@ -13,7 +13,7 @@
 
 #### 下载安装:
 ``` bash
-wget -N --no-check-certificate 地址 && chmod +x ss-go.sh && bash ss-go.sh
+wget -N --no-check-certificate https://github.com/krainos/krain_ssr/blob/master/ssr2.sh && chmod +x ss-go.sh && bash ss-go.sh
 ```
 
 ---
@@ -38,7 +38,7 @@ wget -N --no-check-certificate 地址 && chmod +x ss-go.sh && bash ss-go.sh
 
 #### 下载安装:
 ``` bash
-wget -N --no-check-certificate 地址 && chmod +x ssr.sh && bash ssr.sh
+wget -N --no-check-certificate https://github.com/krainos/krain_ssr/blob/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 ```
 
 ---
