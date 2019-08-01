@@ -13,7 +13,7 @@
 
 #### 下载安装:
 ``` bash
-wget -N --no-check-certificate https://github.com/krainos/krain_ssr/blob/master/ssr2.sh && chmod +x ss-go.sh && bash ss-go.sh
+wget -N --no-check-certificate https://github.com/krainos/krain_ssr/blob/master/ss-go.sh && chmod +x ss-go.sh && bash ss-go.sh
 ```
 
 ---

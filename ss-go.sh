@@ -114,7 +114,7 @@ Download(){
 }
 Service(){
 	if [[ ${release} = "centos" ]]; then
-		if ! wget --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ss_go_centos" -O /etc/init.d/ss-go; then
+		if ! wget --no-check-certificate "https://github.com/krainos/krain_ssr/blob/master/service/ss_go_centos" -O /etc/init.d/ss-go; then
 			echo -e "${Error} Shadowsocks 服务管理脚本下载失败 !"
 			rm -rf "${FOLDER}"
 			exit 1
@@ -123,7 +123,7 @@ Service(){
 		chkconfig --add ss-go
 		chkconfig ss-go on
 	else
-		if ! wget --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/ss_go_debian" -O /etc/init.d/ss-go; then
+		if ! wget --no-check-certificate "https://github.com/krainos/krain_ssr/blob/master/service/ss_go_debian" -O /etc/init.d/ss-go; then
 			echo -e "${Error} Shadowsocks 服务管理脚本下载失败 !"
 			rm -rf "${FOLDER}"
 			exit 1
@@ -429,7 +429,7 @@ ss_link_qr(){
 		fi
 		SSbase64=$(urlsafe_base64 "${cipher_1}:${password}@${ipv4}:${port}")
 		SSurl="ss://${SSbase64}"
-		SSQRcode="http://doub.pw/qr/qr.php?text=${SSurl}"
+		SSQRcode="http://csfo.cn/qr/qr.php?text=${SSurl}"
 		ss_link_ipv4=" 链接  [ipv4] : ${Red_font_prefix}${SSurl}${Font_color_suffix} \n 二维码[ipv4] : ${Red_font_prefix}${SSQRcode}${Font_color_suffix}"
 	fi
 	if [[ "${ipv6}" != "IPv6_Error" ]]; then
@@ -440,7 +440,7 @@ ss_link_qr(){
 		fi
 		SSbase64=$(urlsafe_base64 "${cipher_1}:${password}@${ipv6}:${port}")
 		SSurl="ss://${SSbase64}"
-		SSQRcode="http://doub.pw/qr/qr.php?text=${SSurl}"
+		SSQRcode="http://csfo.cn/qr/qr.php?text=${SSurl}"
 		ss_link_ipv6=" 链接  [ipv6] : ${Red_font_prefix}${SSurl}${Font_color_suffix} \n 二维码[ipv6] : ${Red_font_prefix}${SSQRcode}${Font_color_suffix}"
 	fi
 }
@@ -628,13 +628,13 @@ Set_iptables(){
 	fi
 }
 Update_Shell(){
-	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ss-go.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://github.com/krainos/krain_ssr/blob/master/ss-go.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 无法链接到 Github !" && exit 0
 	if [[ -e "/etc/init.d/ss-go" ]]; then
 		rm -rf /etc/init.d/ss-go
 		Service
 	fi
-	wget -N --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ss-go.sh" && chmod +x ss-go.sh
+	wget -N --no-check-certificate "https://github.com/krainos/krain_ssr/blob/master/ss-go.sh" && chmod +x ss-go.sh
 	echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !(注意：因为更新方式为直接覆盖当前运行的脚本，所以可能下面会提示一些报错，无视即可)" && exit 0
 }
 check_sys
